@@ -6,8 +6,8 @@ import { TicketList } from "./components/tickets/TicketList";
 
 export const App = () => {
   return<>
-  {/* <TicketList/> */}
-  {/* <CustomerList/> */}
+  <TicketList/>
+  <CustomerList/> 
   <EmployeeList/>
   </>
 };
