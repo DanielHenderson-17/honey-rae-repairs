@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 
 export const EmployeeDetails = () => {
-    // /customer/3
-    // path="/customers/:customerId"
+    // /employee/3
+    // path="/employees/:employeeId"
 
-    const { employeeId } = useParams()  // {customerId: 3}
+    const { employeeId } = useParams()  // {employeeId: 3}
 
     return <div>Employee #{employeeId}</div>
 }
