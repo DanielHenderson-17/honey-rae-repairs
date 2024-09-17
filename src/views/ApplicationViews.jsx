@@ -10,14 +10,14 @@ import { useState, useEffect } from "react";
 import { EmployeeForm } from "../components/forms/EmployeeForm";
 
 export const ApplicationViews = () => {
-  const [ currentUser, setCurrentUser ] = useState({})
+  const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localHoneyUser = localStorage.getItem("honey_user");
+    const honeyUserObject = JSON.parse(localHoneyUser);
 
-    setCurrentUser(honeyUserObject)
-  }, [setCurrentUser])
+    setCurrentUser(honeyUserObject);
+  }, [setCurrentUser]);
 
   return (
     <Routes>
@@ -31,7 +31,10 @@ export const ApplicationViews = () => {
         }
       >
         <Route index element={<Welcome />} />
-        <Route path="tickets" element={<TicketList currentUser={currentUser}/>} />
+        <Route
+          path="tickets"
+          element={<TicketList currentUser={currentUser} />}
+        />
         <Route path="employees">
           <Route index element={<EmployeeList />} />
           <Route path=":employeeId" element={<EmployeeDetails />} />
@@ -41,7 +44,10 @@ export const ApplicationViews = () => {
           <Route path=":customerId" element={<CustomerDetails />} />
           {/* /customers/:customerId */}
         </Route>
-        <Route path="profile" element={<EmployeeForm currentUser={currentUser}/>} />
+        <Route
+          path="profile"
+          element={<EmployeeForm currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   );
